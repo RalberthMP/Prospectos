@@ -1,0 +1,51 @@
+<ion-content>
+  <!DOCTYPE html>
+ <head>
+    <!-- <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'> -->
+  </head> 
+  <body style=" overflow: scroll;">
+    <table>
+      <tr *ngFor="let P of ListaPros">
+        <td>          
+          <form  role='form'>
+          <ion-table>
+            <ion-row>
+              <ion-col>
+                  Nombre
+              </ion-col>
+              <ion-col style="width: 500px;">
+                  {{P.Nombre|titlecase}}
+            </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  Primer Apellido
+              </ion-col>
+              <ion-col style="width: 500px;">
+                  {{P.PrimerApellido|titlecase}}
+            </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  Segundo Apellido
+              </ion-col>
+              <ion-col style="width: 500px;">
+                  {{P.SegundoApellido|titlecase}}
+            </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  Status
+              </ion-col>
+              <ion-col style="width: 500px;">
+                  {{P.Status|titlecase}}
+            </ion-col>
+            </ion-row>
+          </ion-table>
+          </form>  
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</ion-content>

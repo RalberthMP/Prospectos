@@ -1,0 +1,15 @@
+[type="text"].ng-dirty.ng-valid {
+    background: #ECFFEC;
+    position: relative;
+  }
+  
+  [type="text"].ng-dirty.ng-invalid {
+    background: #FFCFD0;
+  }
+  
+  .bg-danger {
+    color: #fff;
+    padding: 1em;
+    margin-top: 1em;
+  }
+  

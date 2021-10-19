@@ -1,0 +1,46 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="reveal" style="opacity:0.9;">     
+      
+      <ion-content style="opacity:.9;">
+        <ion-list id="inbox-list" lines="full">
+          <div class="menu-header">
+            <img class="user-avatar" src="assets/img/1.png"/>       
+            <p style="padding-left: 10px;" *ngIf="login.LoggedUser" class="name"> {{login.LoggedUser.UsuarioTotalAgility}}</p>
+          </div>
+
+          
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item  routerDirection="forward" [routerLink]="[p.url]"    lines="none" detail="p.Detail">
+              <ion-icon slot="start" [ios]="p.icon" [md]="p.icon"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+            
+            <!-- <ion-item-group submenu [class.visible]="p.isVisible">
+              <ion-item submenu-item *ngFor="let pd of p.subpages" [routerLink]="[pd.url]" lines="none" >
+                <ion-icon slot="start" [ios]="pd.icon" [md]="pd.icon"></ion-icon> <ion-label>{{pd.title}}</ion-label> 
+                
+              </ion-item>
+                
+            </ion-item-group> -->
+
+          </ion-menu-toggle>
+
+
+          <ion-item (click)="presentAlertConfirm()">
+            <ion-icon slot="start" name="exit" mode="ios"></ion-icon>
+            <ion-label text-capitalize >
+              Cerrar sesion
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+
+      </ion-content>
+
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+</ion-app>

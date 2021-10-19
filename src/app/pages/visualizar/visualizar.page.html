@@ -1,0 +1,79 @@
+<ion-content>
+  <!DOCTYPE html>
+ <head>
+    <!-- <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'> -->
+  </head> 
+  <body style=" overflow: scroll;">
+    <table>
+      <tr *ngFor="let P of ListaPros">
+        <td>
+          <div class='container'>
+            <div  >
+              <div >
+                <h5></h5>
+                
+              </div>
+              <div >
+                <form  role='form'>
+                <ion-table>
+                  <ion-row>
+                    <ion-col>
+                        Nombre
+                    </ion-col>
+                    <ion-col style="width: 500px;">
+                        {{P.Nombre|titlecase}}
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                        Primer Apellido
+                    </ion-col>
+                    <ion-col style="width: 500px;">
+                        {{P.PrimerApellido|titlecase}}
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                        Segundo Apellido
+                    </ion-col>
+                    <ion-col style="width: 500px;">
+                        {{P.SegundoApellido|titlecase}}
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                        Status
+                    </ion-col>
+                    <ion-col style="width: 500px;">
+                        {{P.Status|titlecase}}
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                        Comentarios
+                    </ion-col>
+                    <ion-col style="width: 500px;">
+                      <textarea style="color: navy;" class='form-control' id='id_first_name' placeholder='Comentarios' type='text' [(ngModel)]="P.Comentarios" [ngModelOptions]="{standalone: true}"></textarea>
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <ion-button  type='submit' (click)="EnviaAutorizaRechaza(P,'Autorizado')">Autorizar</ion-button ></ion-col>
+                    <ion-col style="width: 300px;">
+                      <ion-button  color="danger" (click)="EnviaAutorizaRechaza(P,'Rechazado')" type='submit'>Rechazar</ion-button >
+                  </ion-col>
+                  </ion-row>
+                </ion-table>
+
+      
+         
+                </form>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</ion-content>

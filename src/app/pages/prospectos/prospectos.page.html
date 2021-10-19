@@ -1,0 +1,108 @@
+
+<ion-content>
+  <!DOCTYPE html>
+  <head>
+    <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+ </head>
+  <body>
+    <div class='container'>
+      <div class='panel panel-primary dialog-panel'>
+        <div class='panel-heading'>
+          <h5>Registro de nuevos prospectos</h5>
+        </div>
+        <div class='panel-body'>
+          <form class='form-horizontal' role='form' style="width: 100%;">
+          
+
+            <div class='form-group'>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Nombre</label>
+              <div class='col-md-8'>             
+                <div class='col-md-3 indent-small'>
+                  <div class='form-group internal'>
+                    <input class='form-control' id='id_first_name' placeholder='Nombre completo' type='text' [(ngModel)]="Pros.Nombre" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='col-md-3 indent-small'>
+                  <div class='form-group internal'>
+                    <input class='form-control' id='id_last_name' placeholder='Primer Apellito' type='text' [(ngModel)]="Pros.PrimerApellido" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='col-md-3 indent-small'>
+                  <div class='form-group internal'>
+                    <input class='form-control' id='id_last_name' placeholder='Segundo Apellito' type='text' [(ngModel)]="Pros.SegundoApellido" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class='form-group'>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Dirección</label>
+              <div class='col-md-6'>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_email' placeholder='Calle' type='text' [(ngModel)]="Pros.Calle" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_email' placeholder='Numero' type='text' [(ngModel)]="Pros.Numero" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_email' placeholder='Colonia' type='text' [(ngModel)]="Pros.Colonia" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_email' placeholder='Codigo sPostal' type='number' [(ngModel)]="Pros.CodigoPostal" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class='form-group internal'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_phone' placeholder='Telefono: (xxx) - xxx xxxx' type='text' [(ngModel)]="Pros.Telefono" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class='form-group'>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_email'>RFC</label>
+              <div class='col-md-6'>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    <input class='form-control' id='id_email' placeholder='RFC' type='text' [(ngModel)]="Pros.RFC" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class='form-group'>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Documentos</label>
+              <div class='col-md-6'>
+                <div class='form-group'>
+                  <div class='col-md-11'>
+                    
+                    <input id="NomArchivo" type="file" ng2FileSelect [uploader]="uploader"   accept="image/*"  (change)="onSelectFile($event)" (onFileSelected)="onFileSelected($event)"/>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='form-group'>
+              <div class='col-md-offset-4 col-md-3'>
+                <button class='btn-lg btn-primary' type='submit' (click)="Enviar()">Enviar a Autorizaxion</button>
+              </div>
+              <div class='col-md-3'>
+                <button class='btn-lg btn-danger' style='float:right' (click)="Cancelar()" type='submit'>Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</ion-content>
